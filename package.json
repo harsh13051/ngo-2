@@ -1,0 +1,12 @@
+{
+  "name": "suryoday-website",
+  "version": "1.0.0",
+  "description": "Suryoday Vrudhhashram Tejaswi Foundation",
+  "scripts": {
+    "dev": "python -m http.server 3000",
+    "build": "echo 'No build process needed for static site'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}

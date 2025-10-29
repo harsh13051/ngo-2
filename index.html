@@ -1,0 +1,651 @@
+
+        /* Payment Details Styles */
+        .payment-details {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .payment-methods {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .payment-method {
+            text-align: center;
+        }
+
+        .payment-method h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 0 1.5rem;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto 1rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #ff6b35;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p {
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .footer-section a {
+            color: #ff6b35;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #f7931e;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Services Section */
+        .services {
+            padding: 3.5rem 0;
+            background: white;
+            margin: 20px;
+            border-radius: 8px;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2.4rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #ff6b35, #4a90e2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .service-item {
+            text-align: center;
+            padding: 2rem 1rem;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #f8f9ff 0%, #fff5f0 100%);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .service-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .service-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 3.5rem 0;
+            background: linear-gradient(135deg, #f8f9ff 0%, #fff5f0 100%);
+            margin: 20px;
+            border-radius: 8px;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.4rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #ff6b35, #4a90e2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .testimonial-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .testimonial-item::before {
+            content: '"';
+            font-size: 4rem;
+            color: #ff6b35;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-family: serif;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #333;
+            text-align: right;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Responsive */
+        @media (max-width: 980px) {
+            .about-content { grid-template-columns: 1fr; }
+            .donation-content { grid-template-columns: 1fr; }
+            .payment-methods { grid-template-columns: 1fr; }
+            .photo-gallery-hero { margin: 16px; }
+            .services { margin: 16px; }
+            .testimonials { margin: 16px; }
+        }
+
+        @media (max-width: 640px) {
+            .nav-links { display: none; }
+            .hero-content h1 { font-size: 2rem; }
+            .photo-item { height: 200px; }
+            body { padding-top: 100px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo-section">
+                <div class="logo-circle">
+                    <img src="images/logo2.jpg" alt="Suryoday Logo" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect fill=%22%23ffffff%22 width=%22200%22 height=%22200%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 text-anchor=%22middle%22 dy=%2214%22>🙏</text></svg>'">
+                </div>
+                <div class="logo-text">
+                    <h1>सुर्योदय वृद्धाश्रम</h1>
+                    <p>Tejaswi Foundation</p>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#photos">Photos</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Our Work</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#donate">Donate</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hindi-text">सुर्योदय वृद्धाश्रम</div>
+            <h1>Tejaswi Foundation</h1>
+            <p>Dedicated to serving our elderly community with love, care, and dignity</p>
+            <p><em>बुजुर्गों की सेवा ही हमारा धर्म</em></p>
+            <div class="cta-buttons">
+                <a href="#donate" class="cta-button">Support Our Mission</a>
+                <a href="#photos" class="cta-button secondary">See Our Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Hero Section -->
+    <section id="photos" class="photo-gallery-hero">
+        <div class="container">
+            <h2>Life at Suryoday Vruddhashram</h2>
+            <p style="text-align: center; font-size: 1.05rem; color: #666; margin-bottom: 1.6rem;">Capturing moments of joy, care, and community</p>
+            
+            <div class="photo-grid">
+                <div class="photo-item">
+                    <img src="images/10.jpg" alt="Comfortable Living" onerror="this.onerror=null;this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect fill=%22%23ff6b35%22 width=%22200%22 height=%22200%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2230%22 text-anchor=%22middle%22 dy=%2210%22 fill=%22white%22>🏠</text></svg>'">
+                    <div class="photo-caption">
+                        <h3>🏠 Comfortable Living Spaces</h3>
+                        <p>Clean, safe, and welcoming rooms for our residents</p>
+                    </div>
+                </div>
+
+                <div class="photo-item">
+                    <img src="images/14.jpg" alt="Nutritious Meals" onerror="this.onerror=null;this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect fill=%22%23f7931e%22 width=%22200%22 height=%22200%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2230%22 text-anchor=%22middle%22 dy=%2210%22 fill=%22white%22>🍽</text></svg>'">
+                    <div class="photo-caption">
+                        <h3>🍽 Nutritious Meals</h3>
+                        <p>Home-cooked, healthy meals served with love</p>
+                    </div>
+                </div>
+
+                <div class="photo-item">
+                    <img src="images/12.jpg" alt="Community Events" onerror="this.onerror=null;this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect fill=%22%234a90e2%22 width=%22200%22 height=%22200%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2230%22 text-anchor=%22middle%22 dy=%2210%22 fill=%22white%22>🎉</text></svg>'">
+                    <div class="photo-caption">
+                        <h3>🎉 Community Events & Celebrations</h3>
+                        <p>Joyful moments with staff and volunteers</p>
+                    </div>
+                </div>
+
+                <div class="photo-item">
+                    <img src="images/13.jpg" alt="Personal Care" onerror="this.onerror=null;this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect fill=%22%2350c878%22 width=%22200%22 height=%22200%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2230%22 text-anchor=%22middle%22 dy=%2210%22 fill=%22white%22>❤</text></svg>'">
+                    <div class="photo-caption">
+                        <h3>❤ Personal Care & Attention</h3>
+                        <p>Compassionate care for every resident</p>
+                    </div>
+                </div>
+
+                <div class="photo-item">
+                    <img src="images/11.jpg" alt="Spiritual Activities" onerror="this.onerror=null;this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect fill=%22%23ff6b35%22 width=%22200%22 height=%22200%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2230%22 text-anchor=%22middle%22 dy=%2210%22 fill=%22white%22>🙏</text></svg>'">
+                    <div class="photo-caption">
+                        <h3>🙏 Spiritual & Cultural Activities</h3>
+                        <p>Daily prayers, bhajans, and spiritual guidance</p>
+                    </div>
+                </div>
+
+                <div class="photo-item">
+                    <img src="images/15.jpg" alt="Yoga Sessions" onerror="this.onerror=null;this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect fill=%22%23f7931e%22 width=%22200%22 height=%22200%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2230%22 text-anchor=%22middle%22 dy=%2210%22 fill=%22white%22>🧘</text></svg>'">
+                    <div class="photo-caption">
+                        <h3>🧘 Yoga & Exercise Sessions</h3>
+                        <p>Keeping our residents active and healthy</p>
+                    </div>
+                </div>
+
+                <div class="photo-item">
+                    <img src="images/16.jpg" alt="Medical Care" onerror="this.onerror=null;this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect fill=%22%234a90e2%22 width=%22200%22 height=%22200%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2230%22 text-anchor=%22middle%22 dy=%2210%22 fill=%22white%22>🏥</text></svg>'">
+                    <div class="photo-caption">
+                        <h3>🏥 Healthcare Support</h3>
+                        <p>Regular health check-ups and medical assistance</p>
+                    </div>
+                </div>
+
+                <div class="photo-item">
+                    <img src="images/17.jpg" alt="Festival Celebrations" onerror="this.onerror=null;this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect fill=%22%2350c878%22 width=%22200%22 height=%22200%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2230%22 text-anchor=%22middle%22 dy=%2210%22 fill=%22white%22>🎊</text></svg>'">
+                    <div class="photo-caption">
+                        <h3>🎊 Festival Celebrations</h3>
+                        <p>Celebrating all festivals with joy and tradition</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container about-content">
+            <div class="about-text">
+                <h2>About Suryoday Vruddhashram</h2>
+                <p>Established to provide shelter, healthcare and a loving community for elderly people in need. We focus on dignity, nutrition, medical attention and cultural activities so every resident can live with respect and joy.</p>
+                <p>Join our mission — volunteer, donate or simply visit to bring a smile.</p>
+            </div>
+            <div class="logo-display">
+                <div class="main-logo">
+                    <img src="images/logo2.jpg" alt="Main Logo" onerror="this.onerror=null;this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect fill=%22%23ff6b35%22 width=%22200%22 height=%22200%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 text-anchor=%22middle%22 dy=%2214%22 fill=%22white%22>🙏</text></svg>'">
+                </div>
+                <p style="color:#555;">Tejaswi Foundation — caring hands for our elders.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Our Work</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-item-image" style="background-image: url('images/1.jpg');"></div>
+                    <div class="gallery-item-content">
+                        <h3>Daily Care</h3>
+                        <p>Personalised assistance and daily health monitoring for residents.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-item-image" style="background-image: url('images/2.jpg');"></div>
+                    <div class="gallery-item-content">
+                        <h3>Meals & Nutrition</h3>
+                        <p>Nutritious home-cooked meals prepared with care.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-item-image" style="background-image: url('images/3.jpg');"></div>
+                    <div class="gallery-item-content">
+                        <h3>Medical Camps</h3>
+                        <p>Regular medical check-ups and specialist visits.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-item-image" style="background-image: url('images/4.jpg');"></div>
+                    <div class="gallery-item-content">
+                        <h3>Cultural Events</h3>
+                        <p>Festivals, bhajans and community celebrations.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-item-image" style="background-image: url('images/5.jpg');"></div>
+                    <div class="gallery-item-content">
+                        <h3>Yoga & Exercise</h3>
+                        <p>Gentle yoga and physical activities tailored for elders.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-item-image" style="background-image: url('images/6.jpg');"></div>
+                    <div class="gallery-item-content">
+                        <h3>Volunteer Programs</h3>
+                        <p>Opportunities for community members to help and engage.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-item-image" style="background-image: url('images/7.jpg');"></div>
+                    <div class="gallery-item-content">
+                        <h3>Support Services</h3>
+                        <p>Transportation and outreach services.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-item-image" style="background-image: url('images/8.jpg');"></div>
+                    <div class="gallery-item-content">
+                        <h3>Celebrations</h3>
+                        <p>Special event coverage.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-item-image" style="background-image: url('images/elderly%20care.jpg');"></div>
+                    <div class="gallery-item-content">
+                        <h3>Visits & Family Time</h3>
+                        <p>Family visits and community engagement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <span class="service-icon">🏠</span>
+                    <h3>Accommodation</h3>
+                    <p>Safe, comfortable living spaces with 24/7 security and emergency response systems.</p>
+                </div>
+                <div class="service-item">
+                    <span class="service-icon">🍽</span>
+                    <h3>Nutrition</h3>
+                    <p>Balanced, nutritious meals prepared fresh daily, catering to dietary requirements.</p>
+                </div>
+                <div class="service-item">
+                    <span class="service-icon">🏥</span>
+                    <h3>Healthcare</h3>
+                    <p>Regular medical check-ups, medication management, and emergency healthcare services.</p>
+                </div>
+                <div class="service-item">
+                    <span class="service-icon">🧘</span>
+                    <h3>Wellness</h3>
+                    <p>Yoga, meditation, and gentle exercise programs to maintain physical and mental health.</p>
+                </div>
+                <div class="service-item">
+                    <span class="service-icon">🙏</span>
+                    <h3>Spiritual Care</h3>
+                    <p>Daily prayers, bhajans, and spiritual guidance to nurture the soul.</p>
+                </div>
+                <div class="service-item">
+                    <span class="service-icon">🎉</span>
+                    <h3>Social Activities</h3>
+                    <p>Festival celebrations, cultural events, and community engagement activities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>What Our Residents Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-item">
+                    <p class="testimonial-text">Suryoday has given me a new lease on life. The care and respect I receive here makes me feel like I'm with family.</p>
+                    <p class="testimonial-author">- Ram Prasad Sharma</p>
+                </div>
+                <div class="testimonial-item">
+                    <p class="testimonial-text">The staff here treats us with such love and dignity. I couldn't have asked for a better place to spend my golden years.</p>
+                    <p class="testimonial-author">- Lakshmi Devi</p>
+                </div>
+                <div class="testimonial-item">
+                    <p class="testimonial-text">From nutritious meals to spiritual activities, everything here is designed to make us happy and healthy.</p>
+                    <p class="testimonial-author">- Krishna Kumar</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donate" class="donation">
+        <div class="container">
+            <h2>Support Our Cause</h2>
+            <div class="donation-content">
+                <div class="donation-info">
+                    <h3>How your donation helps</h3>
+                    <ul class="impact-list">
+                        <li><span class="icon">🍲</span> Daily nutritious meals</li>
+                        <li><span class="icon">🏥</span> Medical care and medicines</li>
+                        <li><span class="icon">🏠</span> Comfortable living spaces</li>
+                    </ul>
+
+                    <div class="payment-details">
+                        <p><strong>Donate via UPI or QR Code</strong></p>
+                        <div class="payment-methods">
+                            <div class="payment-method">
+                                <h4>UPI ID</h4>
+                                <p><strong>chhaya5777bhagat@oksbi</strong></p>
+                            </div>
+                            <div class="payment-method">
+                                <h4>Scan QR</h4>
+                                <img src="images/donation-qr.png" alt="Donate QR" onerror="this.onerror=null;this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect fill=%22%23ffffff%22 width=%22200%22 height=%22200%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2230%22 text-anchor=%22middle%22 dy=%2210%22 fill=%22black%22>QR</text></svg>'">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="donation-form" onsubmit="handleDonation(event)">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input id="name" required placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input id="email" type="email" required placeholder="you@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount</label>
+                        <input id="amount" type="number" required placeholder="Amount in INR">
+                    </div>
+                    <button class="donate-btn" type="submit">Donate Now</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Footer -->
+    <footer id="contact">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><strong>Tejaswi Foundation</strong></p>
+                <p>📧 Email: info@suryoday.org</p>
+                <p>📞 Phone: +91 98765 43210</p>
+                <p>📱 WhatsApp: +91 98765 43210</p>
+            </div>
+            <div class="footer-section">
+                <h3>Visit Us</h3>
+                <p>🏠 Suryoday Vruddhashram</p>
+                <p>📍 Near City Center</p>
+                <p>🏙 Your City, State - 123456</p>
+                <p>🕒 Open: 24/7 for residents</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="#about">About Us</a></p>
+                <p><a href="#services">Our Services</a></p>
+                <p><a href="#donate">Donate Now</a></p>
+                <p><a href="#contact">Contact</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <p>📘 Facebook: @SuryodayVruddhashram</p>
+                <p>📷 Instagram: @suryoday_foundation</p>
+                <p>📺 YouTube: Suryoday Foundation</p>
+                <p>🐦 Twitter: @SuryodayOrg</p>
+            </div>
+        </div>
+        <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 1rem; margin-top: 1rem;">
+            <p style="opacity:0.8;">&copy; <span id="year"></span> Tejaswi Foundation - Suryoday Vruddhashram. All rights reserved.</p>
+            <p style="opacity:0.7; font-size: 0.9rem; margin-top: 0.5rem;">Dedicated to serving our elderly community with love, care, and dignity</p>
+        </div>
+    </footer>
+
+    <script>
+        // fill year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // fallback if background images fail to load (keeps layout)
+        document.querySelectorAll('.gallery-item-image').forEach(function(el){
+            var bg = window.getComputedStyle(el).backgroundImage;
+            if(!bg || bg === 'none' || bg.indexOf('undefined') !== -1) {
+                el.style.backgroundImage = 'linear-gradient(45deg, #ff6b35, #f7931e)';
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'linear-gradient(135deg, rgba(255,107,53,0.95) 0%, rgba(247,147,30,0.95) 50%, rgba(74,144,226,0.95) 100%)';
+                header.style.backdropFilter = 'blur(15px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #4a90e2 100%)';
+                header.style.backdropFilter = 'blur(10px)';
+            }
+        });
+
+        // Add animation to elements when they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.service-item, .testimonial-item, .gallery-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // UPI QR Donation handler
+        function handleDonation(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const amount = document.getElementById('amount').value.trim();
+
+            if (name && email && amount) {
+                const upiUrl = `upi://pay?pa=chhaya5777bhagat@oksbi&pn=${encodeURIComponent(name)}&am=${encodeURIComponent(amount)}&cu=INR`;
+                alert(`Thank you ${name} for choosing to donate ₹${amount}. Click OK to open your UPI app.`);
+                window.location.href = upiUrl;
+            } else {
+                alert('Please fill in all fields before proceeding.');
+            }
+        }
+    </script>
+</body>
+</html>
