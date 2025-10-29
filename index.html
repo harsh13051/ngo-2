@@ -1,5 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suryoday Vrudhhashram Tejaswi Foundation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        /* Payment Details Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+            padding-top: 90px;
+            background: #fafafa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #4a90e2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .logo-text h1 {
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            text-shadow: 0 0 10px rgba(255,255,255,0.8);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23ff6b35" width="1200" height="600"/><circle fill="%23f7931e" opacity="0.3" cx="200" cy="100" r="150"/><circle fill="%234a90e2" opacity="0.3" cx="1000" cy="500" r="200"/></svg>');
+            background-size: cover;
+            background-position: center;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            margin: 10px 20px;
+            border-radius: 8px;
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+        }
+
+        .hero-content .hindi-text {
+            font-size: 1.6rem;
+            margin-bottom: 0.6rem;
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 12px 26px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255,107,53,0.4);
+        }
+
+        .cta-button.secondary {
+            background: linear-gradient(45deg, #4a90e2, #50c878);
+            box-shadow: 0 4px 15px rgba(74,144,226,0.4);
+        }
+
+        /* Photo Gallery Hero Section */
+        .photo-gallery-hero {
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #f8f9ff 0%, #fff5f0 100%);
+            margin: 20px;
+            border-radius: 8px;
+        }
+
+        .photo-gallery-hero h2 {
+            text-align: center;
+            font-size: 2.4rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ff6b35, #4a90e2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin: 0 auto;
+            max-width: 1100px;
+        }
+
+        .photo-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            height: 260px;
+            background: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.35s ease;
+        }
+
+        .photo-item:hover img {
+            transform: scale(1.06);
+        }
+
+        .photo-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 1.5rem 1.5rem 1.2rem;
+            transform: translateY(0);
+            transition: all 0.3s ease;
+            border-radius: 0 0 14px 14px;
+        }
+
+        .photo-item:hover .photo-caption {
+            transform: translateY(0);
+            background: rgba(0,0,0,0.8);
+            padding: 1.8rem 1.5rem 1.5rem;
+        }
+
+        .photo-caption h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            line-height: 1.3;
+            letter-spacing: 0.5px;
+        }
+
+        .photo-caption p {
+            font-size: 1rem;
+            opacity: 1;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        /* About Section */
+        .about {
+            padding: 3.5rem 0;
+            background: white;
+            margin: 20px;
+            border-radius: 8px;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .main-logo {
+            width: 280px;
+            height: 280px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .main-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 3.5rem 0;
+            background: linear-gradient(135deg, #f8f9ff 0%, #fff5f0 100%);
+            margin: 20px;
+            border-radius: 8px;
+        }
+
+        .gallery h2 {
+            text-align: center;
+            font-size: 2.4rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #ff6b35, #4a90e2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 18px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+
+        .gallery-item-image {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-item-content {
+            padding: 1.2rem;
+        }
+
+        .gallery-item-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .gallery-item-content p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Donation Section */
+        .donation {
+            padding: 3.5rem 0;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #4a90e2 100%);
+            color: white;
+            margin: 20px;
+            border-radius: 8px;
+        }
+
+        .donation h2 {
+            text-align: center;
+            font-size: 2.4rem;
+            margin-bottom: 2rem;
+            color: white;
+        }
+
+        .donation-content {
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 1.5rem;
+            align-items: start;
+        }
+
+        .donation-info {
+            background: rgba(255,255,255,0.08);
+            padding: 1.4rem;
+            border-radius: 12px;
+        }
+
+        .donation-form {
+            background: white;
+            color: #333;
+            padding: 1.4rem;
+            border-radius: 12px;
+        }
+
+        .donation-form input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .donation-form input:focus {
+            outline: none;
+            border-color: #ff6b35;
+            box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.2);
+        }
+
+        .donation-form label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .donate-btn {
+            width: 100%;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+
+        .donate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        .impact-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .impact-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+        }
+
+        .impact-list .icon {
+            margin-right: 0.8rem;
+            font-size: 1.2rem;
+        }
+
         .payment-details {
             margin-top: 1.5rem;
             padding-top: 1rem;
@@ -10,16 +459,94 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1rem;
-            margin-top: 1rem;
+            margin-top: 0.8rem;
         }
 
         .payment-method {
+            background: rgba(255,255,255,0.1);
+            padding: 0.8rem;
+            border-radius: 8px;
             text-align: center;
         }
 
         .payment-method h4 {
             margin-bottom: 0.5rem;
             font-size: 1rem;
+        }
+
+        .payment-method p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin: 0.2rem 0;
+        }
+
+        /* QR Popup Styles */
+        .qr-popup {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .qr-popup-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            width: 90%;
+            max-width: 350px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+            animation: popupFade 0.3s ease-in-out;
+        }
+
+        .qr-popup-content h2 {
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+            color: #ff6b35;
+        }
+
+        .qr-popup-content img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 12px;
+            background: white;
+            padding: 10px;
+            height: auto;
+            margin: 10px 0;
+        }
+
+        .qr-popup-content p {
+            font-size: 0.95rem;
+            margin-top: 10px;
+            color: #555;
+        }
+
+        .qr-close-btn {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            font-size: 26px;
+            color: #ff6b35;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .qr-close-btn:hover {
+            color: #f7931e;
+        }
+
+        @keyframes popupFade {
+            from {opacity: 0; transform: scale(0.9);}
+            to {opacity: 1; transform: scale(1);}
         }
 
         /* Footer */
@@ -198,7 +725,6 @@
         @media (max-width: 980px) {
             .about-content { grid-template-columns: 1fr; }
             .donation-content { grid-template-columns: 1fr; }
-            .payment-methods { grid-template-columns: 1fr; }
             .photo-gallery-hero { margin: 16px; }
             .services { margin: 16px; }
             .testimonials { margin: 16px; }
@@ -211,6 +737,17 @@
             body { padding-top: 100px; }
             .services-grid { grid-template-columns: 1fr; }
             .testimonials-grid { grid-template-columns: 1fr; }
+            .payment-methods { grid-template-columns: 1fr; }
+            .qr-popup-content {
+                width: 90%;
+                padding: 1.5rem;
+            }
+            .qr-popup-content h2 {
+                font-size: 1.3rem;
+            }
+            .qr-popup-content img {
+                max-width: 180px;
+            }
         }
     </style>
 </head>
@@ -262,7 +799,7 @@
             
             <div class="photo-grid">
                 <div class="photo-item">
-                    <img src="images/10.jpg" alt="Comfortable Living" onerror="this.onerror=null;this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect fill=%22%23ff6b35%22 width=%22200%22 height=%22200%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2230%22 text-anchor=%22middle%22 dy=%2210%22 fill=%22white%22>🏠</text></svg>'">
+                    <img src="images/10.jpg" alt="Comfortable Living" onerror="this.onerror=null;this.src='images/1.jpg'">
                     <div class="photo-caption">
                         <h3>🏠 Comfortable Living Spaces</h3>
                         <p>Clean, safe, and welcoming rooms for our residents</p>
@@ -270,7 +807,7 @@
                 </div>
 
                 <div class="photo-item">
-                    <img src="images/14.jpg" alt="Nutritious Meals" onerror="this.onerror=null;this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect fill=%22%23f7931e%22 width=%22200%22 height=%22200%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2230%22 text-anchor=%22middle%22 dy=%2210%22 fill=%22white%22>🍽</text></svg>'">
+                    <img src="images/14.jpg" alt="Nutritious Meals" onerror="this.onerror=null;this.src='images/2.jpg'">
                     <div class="photo-caption">
                         <h3>🍽 Nutritious Meals</h3>
                         <p>Home-cooked, healthy meals served with love</p>
@@ -278,7 +815,7 @@
                 </div>
 
                 <div class="photo-item">
-                    <img src="images/12.jpg" alt="Community Events" onerror="this.onerror=null;this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect fill=%22%234a90e2%22 width=%22200%22 height=%22200%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2230%22 text-anchor=%22middle%22 dy=%2210%22 fill=%22white%22>🎉</text></svg>'">
+                    <img src="images/12.jpg" alt="Community Events" onerror="this.onerror=null;this.src='images/3.jpg'">
                     <div class="photo-caption">
                         <h3>🎉 Community Events & Celebrations</h3>
                         <p>Joyful moments with staff and volunteers</p>
@@ -286,7 +823,7 @@
                 </div>
 
                 <div class="photo-item">
-                    <img src="images/13.jpg" alt="Personal Care" onerror="this.onerror=null;this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect fill=%22%2350c878%22 width=%22200%22 height=%22200%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2230%22 text-anchor=%22middle%22 dy=%2210%22 fill=%22white%22>❤</text></svg>'">
+                    <img src="images/13.jpg" alt="Personal Care" onerror="this.onerror=null;this.src='images/4.jpg'">
                     <div class="photo-caption">
                         <h3>❤ Personal Care & Attention</h3>
                         <p>Compassionate care for every resident</p>
@@ -294,7 +831,7 @@
                 </div>
 
                 <div class="photo-item">
-                    <img src="images/11.jpg" alt="Spiritual Activities" onerror="this.onerror=null;this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect fill=%22%23ff6b35%22 width=%22200%22 height=%22200%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2230%22 text-anchor=%22middle%22 dy=%2210%22 fill=%22white%22>🙏</text></svg>'">
+                    <img src="images/11.jpg" alt="Spiritual Activities" onerror="this.onerror=null;this.src='images/5.jpg'">
                     <div class="photo-caption">
                         <h3>🙏 Spiritual & Cultural Activities</h3>
                         <p>Daily prayers, bhajans, and spiritual guidance</p>
@@ -302,7 +839,7 @@
                 </div>
 
                 <div class="photo-item">
-                    <img src="images/15.jpg" alt="Yoga Sessions" onerror="this.onerror=null;this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect fill=%22%23f7931e%22 width=%22200%22 height=%22200%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2230%22 text-anchor=%22middle%22 dy=%2210%22 fill=%22white%22>🧘</text></svg>'">
+                    <img src="images/15.jpg" alt="Yoga Sessions" onerror="this.onerror=null;this.src='images/6.jpg'">
                     <div class="photo-caption">
                         <h3>🧘 Yoga & Exercise Sessions</h3>
                         <p>Keeping our residents active and healthy</p>
@@ -310,7 +847,7 @@
                 </div>
 
                 <div class="photo-item">
-                    <img src="images/16.jpg" alt="Medical Care" onerror="this.onerror=null;this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect fill=%22%234a90e2%22 width=%22200%22 height=%22200%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2230%22 text-anchor=%22middle%22 dy=%2210%22 fill=%22white%22>🏥</text></svg>'">
+                    <img src="images/16.jpg" alt="Medical Care" onerror="this.onerror=null;this.src='images/7.jpg'">
                     <div class="photo-caption">
                         <h3>🏥 Healthcare Support</h3>
                         <p>Regular health check-ups and medical assistance</p>
@@ -318,7 +855,7 @@
                 </div>
 
                 <div class="photo-item">
-                    <img src="images/17.jpg" alt="Festival Celebrations" onerror="this.onerror=null;this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect fill=%22%2350c878%22 width=%22200%22 height=%22200%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2230%22 text-anchor=%22middle%22 dy=%2210%22 fill=%22white%22>🎊</text></svg>'">
+                    <img src="images/17.jpg" alt="Festival Celebrations" onerror="this.onerror=null;this.src='images/8.jpg'">
                     <div class="photo-caption">
                         <h3>🎊 Festival Celebrations</h3>
                         <p>Celebrating all festivals with joy and tradition</p>
@@ -338,7 +875,7 @@
             </div>
             <div class="logo-display">
                 <div class="main-logo">
-                    <img src="images/logo2.jpg" alt="Main Logo" onerror="this.onerror=null;this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect fill=%22%23ff6b35%22 width=%22200%22 height=%22200%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 text-anchor=%22middle%22 dy=%2214%22 fill=%22white%22>🙏</text></svg>'">
+                    <img src="images/logo2.jpg" alt="Main Logo" onerror="this.onerror=null;this.src='images/1.jpg'">
                 </div>
                 <p style="color:#555;">Tejaswi Foundation — caring hands for our elders.</p>
             </div>
@@ -507,13 +1044,14 @@
                             </div>
                             <div class="payment-method">
                                 <h4>Scan QR</h4>
-                                <img src="images/donation-qr.png" alt="Donate QR" onerror="this.onerror=null;this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect fill=%22%23ffffff%22 width=%22200%22 height=%22200%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2230%22 text-anchor=%22middle%22 dy=%2210%22 fill=%22black%22>QR</text></svg>'">
+                                <img src="images/donation-qr.png" alt="Donate QR" style="width:120px; height:120px; border-radius:8px; margin-top:8px;">
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <form class="donation-form" onsubmit="handleDonation(event)">
+                    <h3>Make a Donation</h3>
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input id="name" required placeholder="Your name">
@@ -523,7 +1061,7 @@
                         <input id="email" type="email" required placeholder="you@example.com">
                     </div>
                     <div class="form-group">
-                        <label for="amount">Amount</label>
+                        <label for="amount">Amount (₹)</label>
                         <input id="amount" type="number" required placeholder="Amount in INR">
                     </div>
                     <button class="donate-btn" type="submit">Donate Now</button>
@@ -531,6 +1069,17 @@
             </div>
         </div>
     </section>
+
+    <!-- QR Code Popup -->
+    <div id="qrPopup" class="qr-popup">
+        <div class="qr-popup-content">
+            <span class="qr-close-btn" onclick="closeQRPopup()">&times;</span>
+            <h2>Scan to Donate</h2>
+            <img src="images/donation-qr.png" alt="Donation QR Code" onerror="this.onerror=null;this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect fill=%22%23ffffff%22 width=%22200%22 height=%22200%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2230%22 text-anchor=%22middle%22 dy=%2210%22 fill=%22black%22>QR</text></svg>'">
+            <p>Use any UPI app to scan and complete your donation ❤️</p>
+            <p style="font-size: 0.85rem; margin-top: 6px;">UPI ID: <b>chhaya5777bhagat@oksbi</b></p>
+        </div>
+    </div>
 
     <!-- Contact / Footer -->
     <footer id="contact">
@@ -631,7 +1180,24 @@
             observer.observe(el);
         });
 
-        // UPI QR Donation handler
+        // QR Popup Functions
+        function openQRPopup() {
+            document.getElementById("qrPopup").style.display = "flex";
+        }
+
+        function closeQRPopup() {
+            document.getElementById("qrPopup").style.display = "none";
+        }
+
+        // Close popup when clicking outside
+        window.onclick = function(event) {
+            const popup = document.getElementById("qrPopup");
+            if (event.target === popup) {
+                popup.style.display = "none";
+            }
+        }
+
+        // UPI QR Donation handler - UPDATED to show QR popup
         function handleDonation(e) {
             e.preventDefault();
             const name = document.getElementById('name').value.trim();
@@ -639,9 +1205,11 @@
             const amount = document.getElementById('amount').value.trim();
 
             if (name && email && amount) {
-                const upiUrl = `upi://pay?pa=chhaya5777bhagat@oksbi&pn=${encodeURIComponent(name)}&am=${encodeURIComponent(amount)}&cu=INR`;
-                alert(`Thank you ${name} for choosing to donate ₹${amount}. Click OK to open your UPI app.`);
-                window.location.href = upiUrl;
+                // Show QR popup instead of redirecting to UPI
+                openQRPopup();
+                
+                // Optional: You can still show the alert if you want
+                // alert(`Thank you ${name} for choosing to donate ₹${amount}. Please scan the QR code to complete your donation.`);
             } else {
                 alert('Please fill in all fields before proceeding.');
             }
